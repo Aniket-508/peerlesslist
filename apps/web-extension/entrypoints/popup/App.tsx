@@ -1,14 +1,16 @@
-import { useState } from 'react';
-import reactLogo from '@/assets/react.svg';
-import wxtLogo from '/wxt.svg';
-import './App.css';
+import Navbar from "@/components/navbar"
+import { useState } from "react"
+
+import reactLogo from "/react.svg"
+import wxtLogo from "/wxt.svg"
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
+      <Navbar />
+      <div className="flex items-center gap-4">
         <a href="https://wxt.dev" target="_blank">
           <img src={wxtLogo} className="logo" alt="WXT logo" />
         </a>
@@ -17,19 +19,19 @@ function App() {
         </a>
       </div>
       <h1>WXT + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+      <div>
+        <button
+          className="px-4 py-2"
+          onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the WXT and React logos to learn more
-      </p>
+      <p>Click on the WXT and React logos to learn more</p>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
