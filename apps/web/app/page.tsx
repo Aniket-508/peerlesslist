@@ -1,12 +1,9 @@
-import { buttonVariants } from "@/components/ui/button"
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle
 } from "@/components/ui/card"
-import { ExternalLinkIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -133,23 +130,24 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
+      <div className="mb-32 grid gap-4 text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
         {LINKS.map(({ title, href, description }) => (
-          <Card key={title}>
-            <CardHeader>
-              <CardTitle>{title}</CardTitle>
-              <CardDescription>{description}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Link
-                href={`${href}?utm_source=create-turbo&utm_medium=with-tailwind&utm_campaign=create-turbo"`}
-                target="_blank"
-                className={buttonVariants({ variant: "link" })}>
-                Learn more
-                <ExternalLinkIcon />
-              </Link>
-            </CardContent>
-          </Card>
+          <Link
+            key={title}
+            href={`${href}?utm_source=create-turbo&utm_medium=with-tailwind&utm_campaign=create-turbo`}
+            target="_blank">
+            <Card className="group transition-colors hover:border-neutral-700 hover:bg-gray-200">
+              <CardHeader>
+                <CardTitle>
+                  {title}{" "}
+                  <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                    -&gt;
+                  </span>
+                </CardTitle>
+                <CardDescription>{description}</CardDescription>
+              </CardHeader>
+            </Card>
+          </Link>
         ))}
       </div>
     </main>
