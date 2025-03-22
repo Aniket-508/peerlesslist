@@ -1,4 +1,3 @@
-import { Card } from "@repo/ui/card"
 import Image from "next/image"
 
 function Gradient({
@@ -126,9 +125,10 @@ export default function Page() {
 
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
         {LINKS.map(({ title, href, description }) => (
-          <Card href={href} key={title} title={title}>
-            {description}
-          </Card>
+          <></>
+          // <Card href={href} key={title} title={title}>
+          //   {description}
+          // </Card>
         ))}
       </div>
     </main>

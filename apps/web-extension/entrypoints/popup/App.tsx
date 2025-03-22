@@ -1,5 +1,4 @@
 import Navbar from "@/components/navbar"
-import { Button } from "@repo/ui/button"
 import { useState } from "react"
 
 import reactLogo from "/react.svg"
@@ -21,9 +20,9 @@ function App() {
       </div>
       <h1>WXT + React</h1>
       <div>
-        <Button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
-        </Button>
+        </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
