@@ -1,14 +1,24 @@
+import { buttonVariants } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle
+} from "@/components/ui/card"
+import { ExternalLinkIcon } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 function Gradient({
   conic,
   className,
   small
-}: {
+}: Readonly<{
   small?: boolean
   conic?: boolean
   className?: string
-}) {
+}>) {
   return (
     <span
       className={`absolute rounded-[100%] mix-blend-normal will-change-[filter] ${
@@ -25,7 +35,7 @@ const LINKS = [
     description: "Find in-depth information about Turborepo features and API."
   },
   {
-    title: "Learn",
+    title: "Handbook",
     href: "https://turbo.build/repo/docs/handbook",
     description: "Learn more about monorepos with our handbook."
   },
@@ -125,10 +135,21 @@ export default function Page() {
 
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
         {LINKS.map(({ title, href, description }) => (
-          <></>
-          // <Card href={href} key={title} title={title}>
-          //   {description}
-          // </Card>
+          <Card key={title}>
+            <CardHeader>
+              <CardTitle>{title}</CardTitle>
+              <CardDescription>{description}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Link
+                href={`${href}?utm_source=create-turbo&utm_medium=with-tailwind&utm_campaign=create-turbo"`}
+                target="_blank"
+                className={buttonVariants({ variant: "link" })}>
+                Learn more
+                <ExternalLinkIcon />
+              </Link>
+            </CardContent>
+          </Card>
         ))}
       </div>
     </main>
