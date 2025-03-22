@@ -130,7 +130,7 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="mb-32 grid gap-4 text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
+      <div className="z-50 mb-32 grid gap-4 text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
         {LINKS.map(({ title, href, description }) => (
           <Link
             key={title}
